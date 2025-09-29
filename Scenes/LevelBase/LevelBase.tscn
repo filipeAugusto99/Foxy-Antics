@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://rosqlwblq4ul"]
+
+[node name="LevelBase" type="Node2D"]
