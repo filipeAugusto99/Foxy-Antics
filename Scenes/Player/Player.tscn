@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcpcmnp45mu6b"]
+[gd_scene load_steps=28 format=3 uid="uid://bcpcmnp45mu6b"]
 
 [ext_resource type="Script" uid="uid://campb0t1lmepe" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://bmspqidpomx3g" path="res://assets/player/player.png" id="1_s0eop"]
@@ -121,6 +121,76 @@ _data = {
 &"run": SubResource("Animation_jmcll")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h54ih"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ude3g"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jmcll"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4wape"]
+advance_mode = 2
+advance_expression = "velocity.y > 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_825xp"]
+advance_mode = 2
+advance_expression = "velocity.y <= 0"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ji083"]
+states/Start/position = Vector2(192, 90)
+states/fall/node = SubResource("AnimationNodeAnimation_h54ih")
+states/fall/position = Vector2(489, 90)
+states/jump/node = SubResource("AnimationNodeAnimation_ude3g")
+states/jump/position = Vector2(349, 90)
+transitions = ["Start", "jump", SubResource("AnimationNodeStateMachineTransition_jmcll"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_4wape"), "fall", "jump", SubResource("AnimationNodeStateMachineTransition_825xp")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jmcll"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4wape"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t26db"]
+advance_mode = 2
+advance_expression = "int(velocity.x) != 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fk5o5"]
+advance_mode = 2
+advance_expression = "int(velocity.x) == 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0kmp4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_825xp"]
+states/idle/node = SubResource("AnimationNodeAnimation_jmcll")
+states/idle/position = Vector2(324, 96)
+states/run/node = SubResource("AnimationNodeAnimation_4wape")
+states/run/position = Vector2(439, 96)
+transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_t26db"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_fk5o5"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_0kmp4")]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i5acl"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_epg6k"]
+advance_mode = 2
+advance_expression = "!is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h54ih"]
+advance_mode = 2
+advance_expression = "is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_t26db"]
+states/Air/node = SubResource("AnimationNodeStateMachine_ji083")
+states/Air/position = Vector2(578, 100)
+states/End/position = Vector2(762, 100)
+states/Grounded/node = SubResource("AnimationNodeStateMachine_825xp")
+states/Grounded/position = Vector2(343, 100)
+states/Start/position = Vector2(140, 100)
+transitions = ["Start", "Grounded", SubResource("AnimationNodeStateMachineTransition_i5acl"), "Grounded", "Air", SubResource("AnimationNodeStateMachineTransition_epg6k"), "Air", "Grounded", SubResource("AnimationNodeStateMachineTransition_h54ih")]
+graph_offset = Vector2(0, 34.4118)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_ft8w5")
@@ -141,3 +211,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_jmcll")
 }
 autoplay = "idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_t26db")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
