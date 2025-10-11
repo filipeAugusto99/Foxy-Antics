@@ -22,6 +22,10 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
+func _enter_tree() -> void:
+	add_to_group(Constants.PLAYER_GROUP)
+
+
 func _physics_process(delta: float) -> void:
 	velocity.y += delta * _gravity
 	
