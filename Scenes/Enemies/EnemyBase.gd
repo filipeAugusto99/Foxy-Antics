@@ -25,7 +25,7 @@ func _ready() -> void:
 		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if global_position.y > FALL_OFF_Y:
 		queue_free()
 
