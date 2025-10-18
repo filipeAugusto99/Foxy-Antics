@@ -24,7 +24,11 @@ func _ready() -> void:
 	if _player_ref == null:
 		queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func flip_me() -> void:
+	animated_sprite_2d.flip_h = _player_ref.global_position.x > global_position.x
+
+
 func _physics_process(delta: float) -> void:
 	if global_position.y > FALL_OFF_Y:
 		queue_free()

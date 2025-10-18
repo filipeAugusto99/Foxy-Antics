@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvi1b5t1x57k6"]
+[gd_scene load_steps=11 format=3 uid="uid://dvi1b5t1x57k6"]
 
 [ext_resource type="PackedScene" uid="uid://cf83y0p1l3k40" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_euo1a"]
 [ext_resource type="Texture2D" uid="uid://57iyvy315c3m" path="res://assets/enemies/eagle/eagle-attack.png" id="2_8eptn"]
+[ext_resource type="Script" uid="uid://d4mveot7jyima" path="res://Scenes/Enemies/Eagle/Eagle.gd" id="2_luig0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_luig0"]
 
@@ -46,6 +47,8 @@ radius = 13.0384
 
 [node name="Eagle" instance=ExtResource("1_euo1a")]
 collision_mask = 0
+script = ExtResource("2_luig0")
+fly_speed = Vector2(35, 15)
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_luig0")
@@ -54,14 +57,19 @@ shape = SubResource("CircleShape2D_luig0")
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_past0")
 animation = &"fly"
-frame_progress = 0.61791
+frame_progress = 0.750659
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_rdues")
 
-[node name="RayCast2D" type="RayCast2D" parent="." index="4"]
+[node name="PlayerDetector" type="RayCast2D" parent="." index="4"]
 target_position = Vector2(0, 300)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="DirectionTimer" type="Timer" parent="." index="5"]
+wait_time = 3.0
+
+[connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
