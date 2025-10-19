@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ot8dcn476728"]
+[gd_scene load_steps=18 format=3 uid="uid://ot8dcn476728"]
 
 [ext_resource type="PackedScene" uid="uid://cf83y0p1l3k40" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_h5qp1"]
 [ext_resource type="Script" uid="uid://bout2r1ok7u3e" path="res://Scenes/Enemies/Snail/Snail.gd" id="2_8m2hh"]
 [ext_resource type="Texture2D" uid="uid://bxko7osglg260" path="res://assets/enemies/snail/snail.png" id="2_tgnkg"]
+[ext_resource type="PackedScene" uid="uid://b2qja7c7xbpob" path="res://Scenes/LifeTimer/LifeTimer.tscn" id="4_e8o6k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8m2hh"]
 radius = 8.0
@@ -109,3 +110,6 @@ shape = SubResource("RectangleShape2D_7cobp")
 [node name="RayCast2D" type="RayCast2D" parent="." index="4"]
 position = Vector2(-15, 0)
 target_position = Vector2(0, 30)
+
+[node name="LifeTimer" parent="." index="5" instance=ExtResource("4_e8o6k")]
+life_timer = 5.0
