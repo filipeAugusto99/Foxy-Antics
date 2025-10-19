@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://djg4vm1qow853"]
+
+[ext_resource type="PackedScene" uid="uid://cg33vfiubu0pg" path="res://Scenes/BaseBullet/BaseBullet.tscn" id="1_q6iym"]
+[ext_resource type="Texture2D" uid="uid://bxdclbe6526w4" path="res://assets/items/bullet2.png" id="2_uwq0t"]
+[ext_resource type="Shape2D" uid="uid://v8wjeu7fusvd" path="res://Resources/BulletShape.tres" id="3_ljryp"]
+
+[node name="EnemyBullet" instance=ExtResource("1_q6iym")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_uwq0t")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = ExtResource("3_ljryp")
