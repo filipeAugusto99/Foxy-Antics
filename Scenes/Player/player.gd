@@ -9,6 +9,7 @@ class_name Player
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var debug_label: Label = $DebugLabel
+@onready var shooter: Shooter = $Shooter
 
 
 const JUMP_SPEED: float = -310.0 
@@ -26,6 +27,13 @@ func _enter_tree() -> void:
 	add_to_group(Constants.PLAYER_GROUP)
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot") == true:
+		var dir: Vector2 = Vector2.LEFT if sprite_2d.flip_h else \
+					Vector2.RIGHT
+		shooter.shoot(dir)
+
+
 func _physics_process(delta: float) -> void:
 	velocity.y += delta * _gravity
 	
@@ -33,11 +41,8 @@ func _physics_process(delta: float) -> void:
 		jump(delta)
 	
 	run()
-	
 	move_and_slide()
-	
 	update_debug_label()
-	
 	fallen_off()
 	
 	

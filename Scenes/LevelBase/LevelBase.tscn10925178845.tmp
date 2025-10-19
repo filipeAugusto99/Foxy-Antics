@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dvkdtr7l2d3dj" path="res://Scenes/LevelBase/LevelBase.gd" id="1_3lxj6"]
 [ext_resource type="Texture2D" uid="uid://c64set3nljwt0" path="res://assets/tiles/Terrain (16x16).png" id="1_5ufo3"]
 [ext_resource type="PackedScene" uid="uid://bcpcmnp45mu6b" path="res://Scenes/Player/Player.tscn" id="2_bgw71"]
-[ext_resource type="PackedScene" uid="uid://bauw0c1pnq0qu" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="3_78m1b"]
+[ext_resource type="PackedScene" uid="uid://dvi1b5t1x57k6" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="3_78m1b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgw71"]
 resource_name = "Platforms"
@@ -264,4 +264,4 @@ tile_set = SubResource("TileSet_akiud")
 position = Vector2(302, -25)
 
 [node name="Eagle" parent="." instance=ExtResource("3_78m1b")]
-position = Vector2(477, -217)
+position = Vector2(507, -172)
