@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dvkdtr7l2d3dj" path="res://Scenes/LevelBase/LevelBase.gd" id="1_3lxj6"]
 [ext_resource type="Texture2D" uid="uid://c64set3nljwt0" path="res://assets/tiles/Terrain (16x16).png" id="1_5ufo3"]
 [ext_resource type="PackedScene" uid="uid://bcpcmnp45mu6b" path="res://Scenes/Player/Player.tscn" id="2_bgw71"]
-[ext_resource type="PackedScene" uid="uid://bauw0c1pnq0qu" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="3_78m1b"]
 [ext_resource type="PackedScene" uid="uid://cugm7bihayvlb" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="5_lmtt4"]
+[ext_resource type="PackedScene" uid="uid://ot8dcn476728" path="res://Scenes/Enemies/Snail/Snail.tscn" id="5_ooqsx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgw71"]
 resource_name = "Platforms"
@@ -264,7 +264,7 @@ tile_set = SubResource("TileSet_akiud")
 [node name="Player" parent="." instance=ExtResource("2_bgw71")]
 position = Vector2(302, -25)
 
-[node name="Eagle" parent="." instance=ExtResource("3_78m1b")]
-position = Vector2(477, -217)
-
 [node name="ObjectMaker" parent="." instance=ExtResource("5_lmtt4")]
+
+[node name="Snail" parent="." instance=ExtResource("5_ooqsx")]
+position = Vector2(509, -24)
