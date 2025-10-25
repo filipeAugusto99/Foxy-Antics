@@ -14,6 +14,10 @@ config/name="FoxyAntics"
 run/main_scene="uid://rosqlwblq4ul"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[autoload]
+
+SignalHub="*res://Globals/SignalHub.gd"
+
 [display]
 
 window/size/viewport_width=1024
