@@ -5,7 +5,7 @@ enum ObjectType {
 	EXPLOSION,
 	PICKUP,
 	BULLET_PLAYER,
-	BULLET_ENEMY
+	BULLET_ENEMY,
 }
 
 
