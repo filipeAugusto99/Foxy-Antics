@@ -7,7 +7,9 @@ const OBJECT_SCENES: Dictionary[Constants.ObjectType, PackedScene] = {
 	Constants.ObjectType.BULLET_ENEMY:
 		preload("res://Scenes/BaseBullet/EnemyBullet.tscn"),
 	Constants.ObjectType.EXPLOSION:
-		preload("res://Scenes/EXPLOSION/EXPLOSION.tscn")
+		preload("res://Scenes/EXPLOSION/EXPLOSION.tscn"),
+	Constants.ObjectType.PICKUP:
+		preload("res://Scenes/FruitPickup/FruitPickup.tscn")
 }
 
 
