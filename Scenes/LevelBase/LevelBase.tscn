@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://rosqlwblq4ul"]
+[gd_scene load_steps=9 format=4 uid="uid://rosqlwblq4ul"]
 
 [ext_resource type="Script" uid="uid://dvkdtr7l2d3dj" path="res://Scenes/LevelBase/LevelBase.gd" id="1_3lxj6"]
 [ext_resource type="Texture2D" uid="uid://c64set3nljwt0" path="res://assets/tiles/Terrain (16x16).png" id="1_5ufo3"]
 [ext_resource type="PackedScene" uid="uid://bcpcmnp45mu6b" path="res://Scenes/Player/Player.tscn" id="2_bgw71"]
 [ext_resource type="PackedScene" uid="uid://cugm7bihayvlb" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="5_lmtt4"]
 [ext_resource type="PackedScene" uid="uid://ot8dcn476728" path="res://Scenes/Enemies/Snail/Snail.tscn" id="5_ooqsx"]
+[ext_resource type="AudioStream" uid="uid://b2152wb1qdm0t" path="res://assets/sound/Flowing Rocks.ogg" id="6_ooqsx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgw71"]
 resource_name = "Platforms"
@@ -274,3 +275,8 @@ position = Vector2(207, -67)
 
 [node name="Snail3" parent="." instance=ExtResource("5_ooqsx")]
 position = Vector2(143, -167)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ooqsx")
+volume_db = -10.0
+parameters/looping = true
