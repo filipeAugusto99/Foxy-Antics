@@ -26,6 +26,7 @@ const HURT_JUMP_VELOCITY: Vector2 = Vector2(0, -130.0)
 
 var _gravity: float = ProjectSettings.get('physics/2d/default_gravity')
 var _is_hurt: bool = false
+var _invincible: bool = false
 
 
 func _ready() -> void:
@@ -96,16 +97,32 @@ func fallen_off() -> void:
 		queue_free()
 
 
+func go_invincible() -> void:
+	if _invincible == true:
+		return
+	_invincible = true
+	var tween: Tween = create_tween()
+	
+	for _i in range(3):
+		tween.tween_property(sprite_2d, "modulate", Color("#ffffff", 0.0), 0.5)
+		tween.tween_property(sprite_2d, "modulate", Color("#ffffff", 1.0), 0.5)
+	tween.tween_property(self, "_invincible", false, 0)
+
+
 func apply_hurt_jump() -> void:
 	_is_hurt = true
 	velocity = HURT_JUMP_VELOCITY
-	hurt_timer.start()
+	hurt_timer.start()	
 	play_effect(DAMAGE)
 
 
 func apply_hit() -> void:
+	if _invincible == true:
+		return
+		
+	go_invincible()
 	apply_hurt_jump()
-
+	
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	call_deferred("apply_hit")
