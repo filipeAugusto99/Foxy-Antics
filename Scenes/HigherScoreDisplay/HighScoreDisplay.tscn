@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://du468gsb7spvo"]
+
+[ext_resource type="LabelSettings" uid="uid://cvkp8bv1ajr60" path="res://Resources/HighScoreDisplay_24.tres" id="1_1ao1n"]
+[ext_resource type="Script" uid="uid://qlglbf0d1s27" path="res://Scenes/HigherScoreDisplay/HighScoreDisplay.gd" id="1_6ngmp"]
+
+[node name="HighScoreDisplay" type="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6ngmp")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 2
+text = "0000 "
+label_settings = ExtResource("1_1ao1n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateLabel" type="Label" parent="."]
+layout_mode = 2
+text = "00-00-00"
+label_settings = ExtResource("1_1ao1n")
+horizontal_alignment = 1
+vertical_alignment = 1
