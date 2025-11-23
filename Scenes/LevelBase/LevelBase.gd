@@ -9,4 +9,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("test") == true:
 		var b = PLAYER_BULLET.instantiate()
 		add_child(b)
-		
+	elif event.is_action_pressed("quit") == true:
+		GameManager.load_main()

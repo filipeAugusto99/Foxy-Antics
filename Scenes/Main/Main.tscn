@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://by16a8wr6bxo0"]
+[gd_scene load_steps=6 format=3 uid="uid://by16a8wr6bxo0"]
 
+[ext_resource type="Script" uid="uid://c0dgoib5r6gg6" path="res://Scenes/Main/Main.gd" id="1_i3fi7"]
 [ext_resource type="Texture2D" uid="uid://cv16t752f3wui" path="res://assets/backgrounds/game_background_3/game_background_3. 2.png" id="1_p8rbg"]
 [ext_resource type="FontFile" uid="uid://c5kjk0md6d0iy" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_qtv3y"]
 [ext_resource type="AudioStream" uid="uid://cin3651fwhmrf" path="res://assets/sound/Farm Frolics.ogg" id="3_cmk6n"]
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i3fi7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
