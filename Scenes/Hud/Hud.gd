@@ -13,12 +13,16 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
-	pass # Replace with function body.
-
+	_score = GameManager.cached_score
+	on_scored(0)
 
 func _enter_tree() -> void:
 	SignalHub.on_scored.connect(on_scored)
 	
+	
+func _exit_tree() -> void:
+	GameManager.try_add_new_score(_score)
+
 	
 func on_scored(points: int) -> void:
 	_score += points

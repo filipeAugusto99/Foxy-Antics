@@ -43,7 +43,7 @@ func load_next_level():
 func load_high_scores():		
 	if ResourceLoader.exists(SCORES_PATH):
 		high_scores = load(SCORES_PATH)
-
+	 
 
 func save_high_scores():
 	ResourceSaver.save(high_scores, SCORES_PATH)
