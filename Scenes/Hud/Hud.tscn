@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://binntthxhd71"]
+[gd_scene load_steps=4 format=3 uid="uid://binntthxhd71"]
 
 [ext_resource type="LabelSettings" uid="uid://usioob7qswcu" path="res://Resources/ScoreDisplay_48.tres" id="1_iteex"]
+[ext_resource type="Script" uid="uid://bb5r726v0owcn" path="res://Scenes/Hud/Hud.gd" id="1_xymhr"]
 [ext_resource type="Texture2D" uid="uid://bu8dara0xmlst" path="res://assets/items/pixel heart 2.png" id="2_xymhr"]
 
 [node name="Hud" type="Control"]
@@ -10,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xymhr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

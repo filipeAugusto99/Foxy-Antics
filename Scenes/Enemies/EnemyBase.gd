@@ -43,6 +43,8 @@ func die() -> void:
 		global_position,
 		Constants.ObjectType.EXPLOSION
 	)
+	SignalHub.emit_on_scored(points)
+	
 	set_physics_process(false)
 	queue_free()
 
