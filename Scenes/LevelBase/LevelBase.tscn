@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b2152wb1qdm0t" path="res://assets/sound/Flowing Rocks.ogg" id="6_ooqsx"]
 [ext_resource type="PackedScene" uid="uid://bauw0c1pnq0qu" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="7_txgif"]
 [ext_resource type="PackedScene" uid="uid://binntthxhd71" path="res://Scenes/Hud/Hud.tscn" id="8_o536s"]
-[ext_resource type="PackedScene" uid="uid://bm61vx8aon3m3" path="res://Scenes/BallSpikes/BallSpikes.tscn" id="9_dufl6"]
+[ext_resource type="PackedScene" uid="uid://bv72ly8m3pktw" path="res://Scenes/MovingPlatform/MovingPlatform.tscn" id="9_dufl6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgw71"]
 resource_name = "Platforms"
@@ -303,5 +303,6 @@ position = Vector2(362, -212)
 position = Vector2(-4, -28)
 curve = SubResource("Curve2D_o536s")
 
-[node name="BallSpikes" parent="BallSpikesHolder/Path2D" instance=ExtResource("9_dufl6")]
+[node name="MovingPlatform" parent="BallSpikesHolder/Path2D" instance=ExtResource("9_dufl6")]
 position = Vector2(343, -149)
+speed = 50.0
