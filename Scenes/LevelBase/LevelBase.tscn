@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://rosqlwblq4ul"]
+[gd_scene load_steps=13 format=4 uid="uid://rosqlwblq4ul"]
 
 [ext_resource type="Script" uid="uid://dvkdtr7l2d3dj" path="res://Scenes/LevelBase/LevelBase.gd" id="1_3lxj6"]
 [ext_resource type="Texture2D" uid="uid://c64set3nljwt0" path="res://assets/tiles/Terrain (16x16).png" id="1_5ufo3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bauw0c1pnq0qu" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="7_txgif"]
 [ext_resource type="PackedScene" uid="uid://binntthxhd71" path="res://Scenes/Hud/Hud.tscn" id="8_o536s"]
 [ext_resource type="PackedScene" uid="uid://bqlv25mxiddgi" path="res://Scenes/FloorSpikes/FloorSpikes.tscn" id="9_dufl6"]
+[ext_resource type="PackedScene" uid="uid://crsoivkl8lau4" path="res://Scenes/Boss/Boss.tscn" id="10_hcoko"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgw71"]
 resource_name = "Platforms"
@@ -299,3 +300,6 @@ position = Vector2(362, -212)
 
 [node name="FloorSpikes" parent="Spikes" instance=ExtResource("9_dufl6")]
 position = Vector2(404, -14)
+
+[node name="Boss" parent="." instance=ExtResource("10_hcoko")]
+position = Vector2(889, -17)
