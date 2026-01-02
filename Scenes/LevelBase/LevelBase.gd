@@ -11,3 +11,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		add_child(b)
 	elif event.is_action_pressed("quit") == true:
 		GameManager.load_main()
+
+
+func _ready() -> void:
+	#await get_tree().create_timer(2.0).timeout
+	#SignalHub.emit_on_boss_killed()
+	pass
