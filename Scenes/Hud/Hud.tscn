@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bu8dara0xmlst" path="res://assets/items/pixel heart 2.png" id="2_xymhr"]
 
 [node name="Hud" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,32 +31,32 @@ size_flags_vertical = 0
 text = "00000"
 label_settings = ExtResource("1_iteex")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBHearts" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="H1" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H1" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_xymhr")
 stretch_mode = 4
 
-[node name="H2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H2" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_xymhr")
 stretch_mode = 4
 
-[node name="H3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H3" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_xymhr")
 stretch_mode = 4
 
-[node name="H4" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H4" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_xymhr")
 stretch_mode = 4
 
-[node name="H5" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H5" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_xymhr")
 stretch_mode = 4
